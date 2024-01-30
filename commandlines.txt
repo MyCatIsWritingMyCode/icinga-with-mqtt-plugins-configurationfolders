@@ -1,0 +1,5 @@
+/usr/lib/nagios/plugins/check-mqtt.py -H localhost -p 1883 -t building/light1 -w "payload == 'false'"
+
+/usr/local/bin/check_mqtt -h localhost -p 1883 -t checkalive
+
+/usr/lib/nagios/plugins/check-mqtt.py -H localhost -p 1883 -t  building/temperature -r --warning "payload > '28'" --critical "payload > '30'"
